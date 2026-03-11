@@ -212,7 +212,7 @@ body {
 .s8 .visual-area {
     position: absolute;
     top: 45px; right: 45px; bottom: 45px; 
-    width: 35%; 
+    width: 25%; 
     background-color: #5b9bd5; 
     display: flex;
     justify-content: center;
