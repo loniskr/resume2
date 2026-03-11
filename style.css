@@ -1,0 +1,292 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+@font-face {
+    font-family: 'SF_HambakSnow';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff') format('woff');
+    font-weight: normal; font-style: normal;
+}
+
+/*  전역 설정 */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    background-color: #2b2b2b;
+    font-family: 'Pretendard Variable', 'Pretendard';
+    display: flex; flex-direction: column; align-items: center; padding: 40px 0;
+}
+
+/* 2중 배경 액자 구조 */
+.slide {
+    width: 1280px; height: 720px;
+    margin-bottom: 50px;    padding: 85px 85px; 
+    position: relative;     box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    overflow: hidden;     z-index: 1;
+    background-color: #da8c7c; /* 바깥 액자*/
+    color: #706966; /* 폰트 색 */
+}
+.slide::before {
+    content: "";     position: absolute;
+    top: 45px; bottom: 45px; left: 45px; right: 45px;
+    background-color: #f7f7ea; /* 안쪽 액자 */
+    z-index: -1;    
+}
+
+.slide-header {
+    font-family: 'SF_HambakSnow' ;
+    font-size: 38px; font-weight: 800; 
+    color: #da8c7c; 
+    margin-bottom: 0; 
+    text-align: center;   
+    padding-bottom: 15px; 
+}
+.card-list { list-style: none; width: 100%; margin-top: 30px; }
+
+/* 좌측 수직 작대기 */
+.card-list > li { 
+    font-family: 'Pretendard' ;    
+    margin-bottom: 30px; 
+    border-left: 4px solid #da8c7c; 
+    padding-left: 20px; 
+}
+.card-list > li > strong { 
+    font-family: 'SF_HambakSnow'; font-size: 26px; color: #da8c7c; display: block; margin-bottom: 12px; 
+}
+
+/* 내용 리스트 - */
+.card-list ul { margin-left: 10px; list-style: none; margin-bottom: 20px; }
+.card-list ul li { position: relative; padding-left: 20px; font-size: 20px; color: #706966; line-height: 1.6; margin-bottom: 8px; }
+.card-list ul li::before { 
+    content: ""; position: absolute; left: 0; top: 14px; 
+    width: 12px; height: 3px; background-color: #706966; 
+}
+
+
+
+.slide.s1 { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.header-text { position: absolute; top: 85px; left: 50%; transform: translateX(-50%); font-size: 30px; color: #da8c7c; font-family: 'Pretendard Variable', sans-serif; font-weight: 600; }
+.main-title { font-size: 76px; font-weight: bold; color: #da8c7c; font-family: 'SF_HambakSnow' }
+
+.s2 .slide-header { font-size: 38px; color: #da8c7c; margin-bottom: 40px; }
+.s2 .card-list { column-count: 2; column-gap: 60px; }
+.s2 .card-list > li { border-left: none; padding-left: 0; margin-bottom: 10px; break-inside: avoid; }
+.s2 .card-list > ul { margin-bottom: 30px; break-inside: avoid; } 
+
+.s2 .card-list strong { 
+    display: block; /* 가로선이 전체 너비로 퍼지게 함 */
+    font-size: 26px; color: #da8c7c;
+    border-bottom: 2px solid #da8c7c; /* 소제목 하단 수평선 */
+    padding-bottom: 8px; margin-bottom: 15px;
+}
+
+/* 그리드 1행2열 제목 고정) */
+.s4-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); /* 3열 */
+    grid-template-rows: repeat(2, 1fr);  /* 2행 */
+    gap: 60px 80px;
+    width: 100%; 
+    height: 100%;
+    margin-top: 30px;
+}
+.s4-grid > div:nth-child(1) { grid-area: 1 / 1 / 2 / 2; } 
+.s4-grid > div:nth-child(2) { grid-area: 1 / 2 / 2 / 3; display: flex; align-items: center; justify-content: center; } /* 헤더 영역 */
+.s4-grid > div:nth-child(3) { grid-area: 1 / 3 / 2 / 4; } 
+.s4-grid > div:nth-child(4) { grid-area: 2 / 1 / 3 / 2; } 
+.s4-grid > div:nth-child(5) { grid-area: 2 / 2 / 3 / 3; } 
+.s4-grid > div:nth-child(6) { grid-area: 2 / 3 / 3 / 4; } 
+.s4-grid .card { border-left: 4px solid #da8c7c; padding-left: 20px; } 
+.s4-grid .card strong { font-family: 'SF_HambakSnow'; font-size: 26px; color: #da8c7c; margin-bottom: 12px; display: block; }
+.s4-grid .card ul { font-size: 22px; color: #706966; line-height: 1.6; margin-bottom: 8px; list-style: none; margin-left: 5px; }
+.s4-grid .card ul li { position: relative; padding-left: 20px; }
+.s4-grid .card ul li::before { content: ""; position: absolute; left: 0; top: 15px; width: 12px; height: 3px; background-color: #706966; }
+.s4-grid .header-cell h2 { font-size: 44px; text-align: center; color: #da8c7c; font-family:'SF_HambakSnow' ; }
+/* 슬라이드 4 내용 */
+
+.s5 .s5-content {
+    display: flex;    height: 100%;    align-items: center;     position: relative;
+}
+.s5 .text-area {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 수직 중앙 정렬 */
+}
+.s5 .text-header { /* s5 헤더 */
+    font-family: 'SF_HambakSnow';
+    font-size: 38px;    font-weight: 800;
+    color: #da8c7c;    text-align: left;
+    padding-bottom: 15px; margin-bottom: 30px;
+}
+.s5 .summary-text { /* s5 본문 */
+    font-size: 24px;
+    line-height: 1.8;
+    color: #706966;
+    text-align: justify;
+}
+.s5 .image-area { /* 이미지: 우측 영역 고정 */
+    position: absolute;
+    top: -40px; right: -40px; bottom: -40px;
+    width: 25%;
+}
+.s5 .image-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.s6 .s6-content { 
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center; /* 수직 중앙 정렬 */
+    position: relative;
+}
+.s6 .image-area {
+    position: absolute;
+    top: -40px; left: -40px; bottom: -40px;
+    width: 35%; 
+    z-index: 1;
+}
+.s6 .image-area img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+.s6 .text-area {
+    margin-left: 40%; 
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.s6 .text-header {
+    font-family: 'SF_HambakSnow';
+    font-size: 38px;
+    color: #da8c7c;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+} /* list 2x2 그리드 형식 */
+.s6 .card-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2열 배치 */
+    gap: 20px 30px;     margin-top: 0;
+}
+.s6 .card-list > li {
+    border-left: 4px solid #da8c7c; /* 카드별 좌측 세로선 */
+    padding-left: 15px;     margin-bottom: 0;
+}
+.s6 .card-list strong {
+    color: #da8c7c;    font-size: 22px;
+    margin-bottom: 10px;    border-bottom: none; 
+}
+.s6 .card-list ul li {
+    font-size: 18px;
+    color: #706966;
+    line-height: 1.5;
+}
+/* S7, S10 3단 가로 분할 */
+.s7-content .card-list, .s10-content .card-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 30px; justify-content: center; }
+.s7-content .card-list > li, .s10-content .card-list > li { margin-bottom: 0; }
+.s8 .s8-content { 
+    display: flex;
+    height: 100%;
+    align-items: center; 
+}
+.s8 .slide-header {
+    text-align: left;        
+    width: 60%; 
+}
+.s8 .card-list {
+    width: 60%;
+    z-index: 2;
+}
+.s8 .card-list > li {
+    border-left: 4px solid #da8c7c; /* 좌측 수직선 */
+    padding-left: 20px;
+}
+.s8 .card-list strong {
+    font-size: 21px;
+    color: #da8c7c;     
+    display: block;
+}
+.s8 .card-list li{  font-size:15px;}
+/* 우측 파란색 배경 영역  */
+.s8 .visual-area {
+    position: absolute;
+    top: 45px; right: 45px; bottom: 45px; 
+    width: 35%; 
+    background-color: #5b9bd5; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.s8 .blue-bg {
+    text-align: center;    color: white;    width: 100%;
+}
+.s8 .mbti-title {
+    font-size: 110px;    font-weight: 900;    line-height: 1;    letter-spacing: -2px;
+}
+.s8 .mbti-underline {
+    width: 80%;     height: 4px;    background-color: white;    margin: 20px auto;
+}
+.s8 .mbti-ratio-text {
+    font-size: 42px;    font-weight: bold;
+}
+
+.slide.s9{
+    display: flex; justify-content: center; align-items: center;
+}
+.s9-content{
+    width:100%; display: flex; justify-content: center;
+}
+.s9-content .card-list { display: grid; grid-template-columns: 1fr 1fr; gap:120px; width:90% }
+.s9-content .card-list strong { font-size: 32px;}
+.s9-content .card-list > li { border-left:none;}
+.sub-text { 
+    font-size: 28px; color: #706966; 
+    font-weight: bold; 
+}
+
+.s11 {
+    display: flex; flex-direction: column; justify-content: center;
+}
+.s11 .slide-header{
+    text-align: left; width: 65%; padding-bottom: 10px; padding-top:10px;  
+}
+.s11 .s11-content{
+    display: flex; align-items: center; position: static;
+}
+.s11 .text-area{
+    width:65%; z-index: 2;
+}
+.s11 .card-list > li{
+    margin-bottom: 15px;
+}
+.s11 .image-area {
+    position: absolute;    
+    top: 45px;     right: 45px;     bottom: 45px; 
+    width: 20%; 
+    z-index: 1;
+}
+.s11 .image-area img {
+    width:100%; height: 100%; object-fit: cover;
+}
+
+
+.slide.s12 {
+    display: flex;    flex-direction: column;    align-items: center;
+    text-align: center;    padding-top: 85px; 
+}
+.s12 .final-content{
+    z-index: 10;    width: 80%;
+}
+.s12 .image-area{
+    position: absolute;
+    bottom: 45px;     left: 45px;    right: 45px;
+    height: 300px; 
+    display: flex;    justify-content: center;    align-items: flex-end;
+    z-index: 5;    overflow: hidden;
+}
+.s12 .image-area img {
+    width: 100%;    height: 100%;
+    object-fit: contain;     object-position: bottom;
+}
